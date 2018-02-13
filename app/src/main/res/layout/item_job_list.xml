@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/companyLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/company_logo"
+        android:paddingLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/companyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/companyLogo"
+        android:layout_toRightOf="@+id/companyLogo"
+        android:text="Tên Công Ty"
+        android:textColor="#FF0000"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/jobPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/companyName"
+        android:layout_alignStart="@+id/companyName"
+        android:layout_below="@+id/companyName"
+        android:textColor="#FF0000"
+        android:text="Vị trí công việc" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/jobPosition"
+        android:layout_alignStart="@+id/jobPosition"
+        android:layout_below="@+id/jobPosition"
+        android:textColor="#000"
+        android:text="Địa điểm" />
+
+    <TextView
+        android:id="@+id/salary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/location"
+        android:layout_alignStart="@+id/location"
+        android:layout_below="@+id/location"
+        android:textColor="#000"
+        android:text="Lương: " />
+
+    <TextView
+        android:id="@+id/salaryAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/salary"
+        android:layout_toRightOf="@+id/salary"
+        android:layout_below="@+id/location"
+        android:text="Cạnh tranh"
+        android:textColor="#000" />
+
+    <ImageView
+        android:id="@+id/saveJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/save_job" />
+
+    <TextView
+        android:id="@+id/deadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/location"
+        android:textColor="#ff0000"
+        android:layout_marginRight="10dp"
+        android:text="01/01/2018" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/salary"
+        android:paddingBottom="3dp"/>
+</RelativeLayout>

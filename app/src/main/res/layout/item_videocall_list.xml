@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/avatar"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/fullname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/avatar"
+        android:layout_toEndOf="@+id/avatar"
+        android:layout_toRightOf="@+id/avatar"
+        android:text="Nguyễn Văn A"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/callTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fullname"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:text="01/01/2018"
+        android:textColor="@android:color/black"/>
+
+    <ImageView
+        android:id="@+id/callType"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginBottom="3dp"
+        android:layout_alignBottom="@+id/avatar"
+        android:layout_alignLeft="@+id/fullname"
+        android:layout_alignStart="@+id/fullname"
+        android:src="@drawable/incoming_call" />
+
+    <TextView
+        android:id="@+id/totalCallTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/avatar"
+        android:layout_toRightOf="@+id/callType"
+        android:layout_toEndOf="@+id/callType"
+        android:layout_marginLeft="3dp"
+        android:text="01:23" />
+</RelativeLayout>

@@ -1,48 +1,56 @@
-package com.example.kienhao.timviec60s.jobseeker.activity;
+package com.example.kienhao.timviec60s.jobseeker.fragment;
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.kienhao.timviec60s.R;
-import com.example.kienhao.timviec60s.jobseeker.fragment.JobListFragment;
-import com.example.kienhao.timviec60s.jobseeker.fragment.MyJobFragment;
-import com.example.kienhao.timviec60s.jobseeker.fragment.VideoCallFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SeekerHomeActivity extends AppCompatActivity {
+/**
+ * Created by KienHao on 2/13/2018.
+ */
 
-    private Toolbar toolbar;
+public class MyJobFragment extends Fragment {
+
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
+    public MyJobFragment() {
+        // Required empty public constructor
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seeker_home);
+    }
 
-        toolbar = (Toolbar) findViewById(R.id.seekerHomeToolbar);
-        setSupportActionBar(toolbar);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_my_job, container, false);
 
-        viewPager = (ViewPager) findViewById(R.id.seekerHomeViewpager);
+        viewPager = (ViewPager) view.findViewById(R.id.myJobViewpager);
         setupViewPager(viewPager);
 
-        tabLayout = (TabLayout) findViewById(R.id.seekerHomeTabs);
+        tabLayout = (TabLayout) view.findViewById(R.id.myJobTabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        return view;
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new JobListFragment(), "Danh sách công việc");
-        adapter.addFragment(new MyJobFragment(), "Công việc của tôi");
-        adapter.addFragment(new VideoCallFragment(), "Gọi video");
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
+        adapter.addFragment(new SavedJobFragment(), "Đã lưu");
+        adapter.addFragment(new AppliedJobFragment(), "Ứng tuyển");
         viewPager.setAdapter(adapter);
     }
 
