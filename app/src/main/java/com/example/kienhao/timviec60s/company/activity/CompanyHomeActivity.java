@@ -1,7 +1,9 @@
-package com.example.kienhao.timviec60s;
+package com.example.kienhao.timviec60s.company.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.kienhao.timviec60s.R;
 
 public class CompanyHomeActivity extends AppCompatActivity {
 
