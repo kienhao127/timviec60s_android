@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".general.MainActivity">
+        <activity android:name=".general.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".jobseeker.activity.SeekerHomeActivity" />
-        <activity android:name=".company.activity.CompanyHomeActivity"></activity>
+        <activity android:name=".company.activity.CompanyHomeActivity" />
+        <activity android:name=".general.activity.NotifyActivity" />
+        <activity android:name=".general.activity.SearchActivity"></activity>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

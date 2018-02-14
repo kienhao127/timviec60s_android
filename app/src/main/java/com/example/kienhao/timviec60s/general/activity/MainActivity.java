@@ -1,4 +1,4 @@
-package com.example.kienhao.timviec60s.general;
+package com.example.kienhao.timviec60s.general.activity;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -9,7 +9,7 @@ import com.example.kienhao.timviec60s.R;
 import com.example.kienhao.timviec60s.jobseeker.activity.SeekerHomeActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT = 4000;
+    private static int SPLASH_TIME_OUT = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

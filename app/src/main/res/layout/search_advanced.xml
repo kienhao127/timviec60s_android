@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/advancedSearch"
+    android:layout_below="@id/searchBox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone">
+
+    <EditText
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:hint="Địa điểm"
+        android:textSize="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="15dp"
+        android:textColor="@android:color/darker_gray"
+        android:drawableLeft="@drawable/location"
+        android:drawablePadding="5dp"/>
+
+    <EditText
+        android:id="@+id/salary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/location"
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:hint="Mức lương"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="15dp"
+        android:drawableLeft="@drawable/location"
+        android:drawablePadding="5dp"/>
+
+    <EditText
+        android:id="@+id/position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/salary"
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:hint="Vị trí"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="15dp"
+        android:drawableLeft="@drawable/location"
+        android:drawablePadding="5dp"/>
+
+
+    <RelativeLayout
+        android:id="@+id/locationNameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/position"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/textViewDiaDiem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="Địa điểm"
+            android:paddingTop="15dp"
+            android:paddingLeft="15dp"/>
+
+        <TextView
+            android:id="@+id/myLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vị trí của bạn"
+            android:textColor="#000"
+            android:drawableLeft="@drawable/target"
+            android:drawablePadding="10dp"
+            android:layout_below="@+id/textViewDiaDiem"
+            android:padding="10dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@+id/myLocation"
+            android:paddingBottom="3dp"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/locationList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/myLocation"
+            android:layout_marginTop="5dp">
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+
+</RelativeLayout>

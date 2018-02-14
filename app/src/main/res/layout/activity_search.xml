@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kienhao.timviec60s.general.activity.SearchActivity">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/toolbar" />
+    <EditText
+        android:id="@+id/searchBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarLayout"
+        android:hint="Từ khóa"
+        android:textSize="15dp"
+        android:textColor="@android:color/darker_gray"/>
+    <TextView
+        android:id="@+id/extendAdvancedSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nâng cao"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textStyle="bold"
+        android:layout_below="@+id/searchBox"/>
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/extendAdvancedSearch"
+        layout="@layout/search_advanced" />
+</RelativeLayout>

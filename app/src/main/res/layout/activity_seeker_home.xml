@@ -5,43 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.kienhao.timviec60s.jobseeker.activity.SeekerHomeActivity">
-    <android.support.v7.widget.Toolbar
+    <RelativeLayout
         android:id="@+id/seekerHomeToolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:contentInsetStart="0dp">
-        <RelativeLayout
+        android:background="?attr/colorPrimary">
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/avatar"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"/>
+
+        <TextView
+            android:id="@+id/searchBox"
+            android:background="@drawable/round_background"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ImageView
-                android:id="@+id/avatar"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/avatar"
-                android:paddingLeft="10dp"
-                android:paddingTop="5dp"/>
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/avatar"
+            android:layout_toLeftOf="@+id/notify"
+            android:layout_toRightOf="@+id/avatar"
+            android:layout_toStartOf="@+id/notify"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text=" Tìm kiếm"
+            android:textColor="@android:color/darker_gray"
+            android:drawableLeft="@drawable/search"
+            android:textSize="15dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="Tìm Việc 60s"
-                android:textColor="#FFF"
-                android:textSize="25dp"/>
-
-            <ImageView
-                android:id="@+id/notify"
-                android:layout_width="60dp"
-                android:layout_height="560dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/noti"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"/>
-        </RelativeLayout>
-    </android.support.v7.widget.Toolbar>
+        <ImageView
+            android:id="@+id/notify"
+            android:layout_width="60dp"
+            android:layout_height="560dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/noti"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"/>
+    </RelativeLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/seekerHomeViewpager"

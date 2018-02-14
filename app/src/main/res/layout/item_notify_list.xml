@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/notifyAvatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/avatar"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/notifyContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/notifyAvatar"
+        android:layout_toRightOf="@+id/notifyAvatar"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="Nội dung thông báo"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/notifyTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notifyContent"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/notifyAvatar"
+        android:layout_toRightOf="@+id/notifyAvatar"
+        android:text="01/01/2018"
+        android:textSize="12dp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/notifyAvatar"
+        android:paddingBottom="3dp"/>
+</RelativeLayout>
