@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        android:id="@+id/eventColor"
+        android:layout_width="7dp"
+        android:layout_height="100dp"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_below="@+id/salary"
+        android:layout_margin="3dp"
+        />
+
+    <TextView
+        android:id="@+id/companyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/eventColor"
+        android:layout_toRightOf="@+id/eventColor"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="Tên công ty" />
+    <TextView
+        android:id="@+id/interviewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/eventColor"
+        android:layout_toRightOf="@+id/eventColor"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/companyName"
+        android:textColor="#000"
+        android:textSize="15dp"
+        android:text="14:00 19/2/2018" />
+
+    <TextView
+        android:id="@+id/interviewLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/interviewTime"
+        android:layout_below="@+id/interviewTime"
+        android:layout_toLeftOf="@+id/companyLogo"
+        android:layout_toStartOf="@+id/companyLogo"
+        android:layout_marginRight="10dp"
+        android:text="Địa điểm phỏng vấn"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <ImageView
+        android:id="@+id/companyLogo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/company_logo" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/eventColor"
+        android:paddingBottom="3dp"/>
+</RelativeLayout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kienhao.timviec60s.jobseeker.activity.SeekerProfileActivity">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/toolbar"
+        android:id="@+id/includeTablayout"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cover"
+        android:layout_below="@+id/includeTablayout"
+        android:scaleType="fitXY"
+        android:id="@+id/cover" />
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/includeTablayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:src="@drawable/avatar" />
+
+    <TextView
+        android:id="@+id/fullname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/avatar"
+        android:gravity="center"
+        android:text="Lương Kiên Hào"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        android:textSize="20dp" />
+    <TextView
+        android:id="@+id/tinyDes"
+        android:layout_below="@+id/fullname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Lập trình viên | Tp. Hồ Chi Minh"
+        android:textColor="#FFF"
+        android:textSize="15dp"/>
+    <TextView
+        android:id="@+id/mail"
+        android:layout_below="@+id/tinyDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="luongkienhao@gmail.com"
+        android:textColor="#FFF"
+        android:textSize="15dp"
+        android:drawableLeft="@drawable/mail"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="10dp"
+        android:drawablePadding="5dp"/>
+    <TextView
+        android:id="@+id/phone"
+        android:layout_below="@+id/mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01268614635"
+        android:textColor="#FFF"
+        android:textSize="15dp"
+        android:paddingTop="5dp"
+        android:drawableLeft="@drawable/mobile"
+        android:layout_centerHorizontal="true"
+        android:drawablePadding="5dp"/>
+
+    <TextView
+        android:id="@+id/aboutMe"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phone"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/round_background"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Giới thiệu"
+        android:textSize="17dp"
+        android:textColor="#000"/>
+    <com.example.kienhao.timviec60s.customview.JustifyTextView
+        android:id="@+id/aboutMeDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aboutMe"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:text="Đây là những dòng giới thiệu về Lương Kiên Hào Đây là những dòng giới thiệu về Lương Kiên Hào Đây là những dòng giới thiệu về Lương Kiên Hào Đây là những dòng giới thiệu về Lương Kiên Hào Đây là những dòng giới thiệu về Lương Kiên Hào"
+        android:maxLines="5"
+        android:textColor="#000"
+        android:textSize="16dp"
+        />
+
+    <TextView
+        android:id="@+id/watchCV"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/hire"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_background"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp"
+        android:text="Xem CV"
+        android:textSize="17dp"
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/hire"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_background"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp"
+        android:text="Tuyển dụng"
+        android:textSize="17dp"
+        android:textColor="#000" />
+
+
+</RelativeLayout>

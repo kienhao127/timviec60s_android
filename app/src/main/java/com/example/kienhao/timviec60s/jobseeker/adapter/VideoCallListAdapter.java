@@ -56,7 +56,7 @@ public class VideoCallListAdapter extends RecyclerView.Adapter<RecyclerView.View
                 .apply(RequestOptions.errorOf(R.drawable.avatar))
                 .into(videoCallItemHolder.avatar);
         videoCallItemHolder.fullname.setText(arrVideoCall.get(position).getFullname());
-        videoCallItemHolder.callTime.setText(convertLongToDate(arrVideoCall.get(position).getCallTime()));
+        videoCallItemHolder.callTime.setText(convertLongToDate(arrVideoCall.get(position).getCallTime(), "d/MM/yyyy"));
         videoCallItemHolder.totalCallTime.setText(parseMStoTimer(arrVideoCall.get(position).getTotalCallTime()));
 
         switch (arrVideoCall.get(position).getCallType()){

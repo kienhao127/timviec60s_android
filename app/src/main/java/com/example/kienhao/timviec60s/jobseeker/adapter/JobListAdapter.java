@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.kienhao.timviec60s.R;
-import com.example.kienhao.timviec60s.model.JobDetail;
+import com.example.kienhao.timviec60s.model.JobQuickView;
 
 import java.util.ArrayList;
 
@@ -25,10 +25,10 @@ import static com.example.kienhao.timviec60s.utils.ElapsedTime.convertLongToDate
 public class JobListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     Context context;
-    ArrayList<JobDetail> arrJobDetail;
-    public JobListAdapter(Context context, ArrayList<JobDetail> arrJobDetail){
+    ArrayList<JobQuickView> arrJobQuickView;
+    public JobListAdapter(Context context, ArrayList<JobQuickView> arrJobQuickView){
         this.context = context;
-        this.arrJobDetail = arrJobDetail;
+        this.arrJobQuickView = arrJobQuickView;
     }
 
     @Override
@@ -45,16 +45,16 @@ public class JobListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         JobItemHolder jobItemHolder = (JobItemHolder) holder;
         Glide.with(context)
-                .load(arrJobDetail.get(position).getCompanyLogoURL())
+                .load(arrJobQuickView.get(position).getCompanyLogoURL())
                 .apply(RequestOptions.placeholderOf(R.drawable.company_logo))
                 .apply(RequestOptions.errorOf(R.drawable.company_logo))
                 .into(jobItemHolder.companyLogo);
-        jobItemHolder.companyName.setText(arrJobDetail.get(position).getCompanyName());
-        jobItemHolder.jobPosition.setText(arrJobDetail.get(position).getJobPosition());
-        jobItemHolder.location.setText(arrJobDetail.get(position).getLocation());
-        jobItemHolder.salaryAmount.setText(String.valueOf(arrJobDetail.get(position).getSalaryAmount()));
-        jobItemHolder.deadline.setText(convertLongToDate(arrJobDetail.get(position).getDeadline()));
-        if (arrJobDetail.get(position).isSaved()){
+        jobItemHolder.companyName.setText(arrJobQuickView.get(position).getCompanyName());
+        jobItemHolder.jobPosition.setText(arrJobQuickView.get(position).getJobPosition());
+        jobItemHolder.location.setText(arrJobQuickView.get(position).getLocation());
+        jobItemHolder.salaryAmount.setText(String.valueOf(arrJobQuickView.get(position).getSalaryAmount()));
+        jobItemHolder.deadline.setText(convertLongToDate(arrJobQuickView.get(position).getDeadline(), "d/MM/yyyy"));
+        if (arrJobQuickView.get(position).isSaved()){
             jobItemHolder.saveJob.setImageResource(R.drawable.saved_job);
         } else {
             jobItemHolder.saveJob.setImageResource(R.drawable.save_job);
@@ -63,7 +63,7 @@ public class JobListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public int getItemCount() {
-        return arrJobDetail.size();
+        return arrJobQuickView.size();
     }
 
     public class JobItemHolder extends RecyclerView.ViewHolder {

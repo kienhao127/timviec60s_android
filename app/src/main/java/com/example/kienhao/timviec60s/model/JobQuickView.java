@@ -4,7 +4,7 @@ package com.example.kienhao.timviec60s.model;
  * Created by KienHao on 2/13/2018.
  */
 
-public class JobDetail {
+public class JobQuickView {
     String companyLogoURL;
     String companyName;
     String jobPosition;
@@ -13,11 +13,11 @@ public class JobDetail {
     long deadline;
     boolean isSaved;
 
-    public JobDetail(){
+    public JobQuickView(){
 
     }
 
-    public JobDetail(String companyLogoURL, String companyName, String jobPosition, String location, int salaryAmount, long deadline, boolean isSaved) {
+    public JobQuickView(String companyLogoURL, String companyName, String jobPosition, String location, int salaryAmount, long deadline, boolean isSaved) {
         this.companyLogoURL = companyLogoURL;
         this.companyName = companyName;
         this.jobPosition = jobPosition;

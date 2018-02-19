@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import com.example.kienhao.timviec60s.R;
 import com.example.kienhao.timviec60s.general.activity.NotifyActivity;
 import com.example.kienhao.timviec60s.general.activity.SearchActivity;
+import com.example.kienhao.timviec60s.jobseeker.fragment.InterviewScheduleFragment;
 import com.example.kienhao.timviec60s.jobseeker.fragment.JobListFragment;
 import com.example.kienhao.timviec60s.jobseeker.fragment.MyJobFragment;
 import com.example.kienhao.timviec60s.jobseeker.fragment.VideoCallFragment;
@@ -31,18 +32,25 @@ public class SeekerHomeActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private ImageView notify;
     private TextView searchBox;
+    private ImageView avatar;
+
+    void init(){
+        searchBox = (TextView) findViewById(R.id.searchBox);
+        avatar = (ImageView) findViewById(R.id.avatar);
+        viewPager = (ViewPager) findViewById(R.id.seekerHomeViewpager);
+        tabLayout = (TabLayout) findViewById(R.id.seekerHomeTabs);
+        notify = (ImageView) findViewById(R.id.notify);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seeker_home);
+        init();
 
-        viewPager = (ViewPager) findViewById(R.id.seekerHomeViewpager);
         setupViewPager(viewPager);
-
-        tabLayout = (TabLayout) findViewById(R.id.seekerHomeTabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        notify = (ImageView) findViewById(R.id.notify);
         notify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,12 +63,19 @@ public class SeekerHomeActivity extends AppCompatActivity {
             }
         });
 
-        searchBox = (TextView) findViewById(R.id.searchBox);
         searchBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent searchIntent = new Intent(SeekerHomeActivity.this, SearchActivity.class);
                 startActivity(searchIntent);
+            }
+        });
+
+        avatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent profileInten = new Intent(SeekerHomeActivity.this, SeekerProfileActivity.class);
+                startActivity(profileInten);
             }
         });
     }
@@ -70,6 +85,7 @@ public class SeekerHomeActivity extends AppCompatActivity {
         adapter.addFragment(new JobListFragment(), "Danh sách công việc");
         adapter.addFragment(new MyJobFragment(), "Công việc của tôi");
         adapter.addFragment(new VideoCallFragment(), "Gọi video");
+        adapter.addFragment(new InterviewScheduleFragment(), "Lịch phỏng vấn");
         viewPager.setAdapter(adapter);
     }
 

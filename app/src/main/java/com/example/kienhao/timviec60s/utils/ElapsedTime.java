@@ -8,8 +8,8 @@ import java.util.TimeZone;
  */
 
 public class ElapsedTime {
-    public static String convertLongToDate(long date) {
-        SimpleDateFormat df = new SimpleDateFormat("d/MM/yyyy");
+    public static String convertLongToDate(long date, String dateFormat) {
+        SimpleDateFormat df = new SimpleDateFormat(dateFormat);
         df.setTimeZone(TimeZone.getTimeZone("GMT+7:00"));
         return df.format(date);
     }

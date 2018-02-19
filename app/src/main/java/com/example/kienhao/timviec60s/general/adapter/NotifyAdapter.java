@@ -61,7 +61,7 @@ public class NotifyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
 
         notifyItemHolder.content.setText(builder, TextView.BufferType.SPANNABLE);
-        notifyItemHolder.notiTime.setText(convertLongToDate(arrNotifyContent.get(position).getNotifyTime()));
+        notifyItemHolder.notiTime.setText(convertLongToDate(arrNotifyContent.get(position).getNotifyTime(), "d/MM/yyyy"));
     }
 
     @Override

@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kienhao.timviec60s">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +23,8 @@
         <activity android:name=".jobseeker.activity.SeekerHomeActivity" />
         <activity android:name=".company.activity.CompanyHomeActivity" />
         <activity android:name=".general.activity.NotifyActivity" />
-        <activity android:name=".general.activity.SearchActivity"></activity>
+        <activity android:name=".general.activity.SearchActivity" />
+        <activity android:name=".jobseeker.activity.SeekerProfileActivity"></activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
+
 </manifest>
