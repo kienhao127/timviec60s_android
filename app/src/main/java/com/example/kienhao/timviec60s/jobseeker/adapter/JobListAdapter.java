@@ -26,6 +26,8 @@ public class JobListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     Context context;
     ArrayList<JobQuickView> arrJobQuickView;
+    private OnItemClickListener mItemClickListener;
+
     public JobListAdapter(Context context, ArrayList<JobQuickView> arrJobQuickView){
         this.context = context;
         this.arrJobQuickView = arrJobQuickView;
@@ -85,6 +87,15 @@ public class JobListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             saveJob = (ImageView) view.findViewById(R.id.saveJob);
             deadline = (TextView) view.findViewById(R.id.deadline);
 
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mItemClickListener != null) {
+                        mItemClickListener.onItemClick(v, getAdapterPosition());
+                    }
+                }
+            });
+
             saveJob.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -92,5 +103,13 @@ public class JobListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 }
             });
         }
+    }
+
+    public interface OnItemClickListener {
+        public void onItemClick(View view, int position);
+    }
+
+    public void SetOnItemClickListener(final JobListAdapter.OnItemClickListener mItemClickListener) {
+        this.mItemClickListener = mItemClickListener;
     }
 }

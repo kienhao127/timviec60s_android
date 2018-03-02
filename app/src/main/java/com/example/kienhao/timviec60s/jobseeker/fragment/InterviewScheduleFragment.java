@@ -3,6 +3,7 @@ package com.example.kienhao.timviec60s.jobseeker.fragment;
 import android.graphics.Color;
 import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -39,16 +40,17 @@ public class InterviewScheduleFragment extends Fragment {
     TextView monthAndYear;
     CompactCalendarView compactCalendarView;
     SimpleDateFormat simpleDateFormat;
-    ImageView addEvent;
+    FloatingActionButton addEvent;
     RecyclerView eventListRecyclerView;
     EventListAdapter adapter;
     RecyclerView.LayoutManager layoutManager;
     List<Event> arrEventDetail;
 
     void init(View view){
+        eventListRecyclerView = (RecyclerView) view.findViewById(R.id.eventList);
         monthAndYear = (TextView) view.findViewById(R.id.monthAndYear);
         compactCalendarView = (CompactCalendarView) view.findViewById(R.id.compactcalendar_view);
-        addEvent = (ImageView) view.findViewById(R.id.addEvent);
+        addEvent = (FloatingActionButton) view.findViewById(R.id.addEvent);
         simpleDateFormat = new SimpleDateFormat("MM/yyyy");
         monthAndYear.setText("Tháng " + simpleDateFormat.format(System.currentTimeMillis()));
     }
@@ -67,6 +69,12 @@ public class InterviewScheduleFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_interview_schedule, container, false);
         init(view);
 
+        arrEventDetail = new ArrayList<>();
+        arrEventDetail.add(new Event(Color.RED, 1518024949335L,  new EventDetail("", "Công ty Đỏ", "182 Lê Đại Hành")));
+        arrEventDetail.add(new Event(Color.GREEN, 1518024949335L,  new EventDetail("", "Công ty Xanh lá", "183 Lê Đại Hành")));
+        arrEventDetail.add(new Event(Color.BLUE, 1518024949335L,  new EventDetail("", "Công ty Xanh dương", "184 Lê Đại Hành")));
+        arrEventDetail.add(new Event(Color.YELLOW, 1518024949335L,  new EventDetail("", "Công ty Vàng", "185 Lê Đại Hành")));
+
         addEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,23 +84,29 @@ public class InterviewScheduleFragment extends Fragment {
 
         // Set first day of week to Monday, defaults to Monday so calling setFirstDayOfWeek is not necessary
         // Use constants provided by Java Calendar class
-        compactCalendarView.setFirstDayOfWeek(Calendar.MONDAY);
         compactCalendarView.setLocale(TimeZone.getTimeZone("GMT+07:00"), Locale.getDefault());
+        String[] dayColumnNames = new String[7];
 
-        // Query for events on Sun, 07 Jun 2015 GMT.
-        // Time is not relevant when querying for events, since events are returned by day.
-        // So you can pass in any arbitary DateTime and you will receive all events for that day.
-        List<Event> events = compactCalendarView.getEvents(1518024949335L); // can also take a Date object
-
-        // events has size 2 with the 2 events inserted previously
-        Log.d(TAG, "Events: " + events);
+        dayColumnNames[0]="TH 2";
+        dayColumnNames[1]="TH 3";
+        dayColumnNames[2]="TH 4";
+        dayColumnNames[3]="TH 5";
+        dayColumnNames[4]="TH 6";
+        dayColumnNames[5]="TH 7";
+        dayColumnNames[6]="CN";
+        compactCalendarView.setDayColumnNames(dayColumnNames);
+        compactCalendarView.addEvents(arrEventDetail);
 
         // define a listener to receive callbacks when certain events happen.
         compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
             public void onDayClick(Date dateClicked) {
                 List<Event> events = compactCalendarView.getEvents(dateClicked);
-                Log.d(TAG, "Day was clicked: " + dateClicked + " with events " + events);
+
+                layoutManager = new LinearLayoutManager(getContext());
+                eventListRecyclerView.setLayoutManager(layoutManager);
+                adapter = new EventListAdapter(getContext(), events);
+                eventListRecyclerView.setAdapter(adapter);
             }
 
             @Override
@@ -101,20 +115,6 @@ public class InterviewScheduleFragment extends Fragment {
                 monthAndYear.setText("Tháng " + simpleDateFormat.format(firstDayOfNewMonth));
             }
         });
-
-
-        arrEventDetail = new ArrayList<>();
-        arrEventDetail.add(new Event(Color.RED, 1518024949335L,  new EventDetail("", "Công ty Đỏ", "182 Lê Đại Hành")));
-        arrEventDetail.add(new Event(Color.GREEN, 1518024949335L,  new EventDetail("", "Công ty Xanh lá", "183 Lê Đại Hành")));
-        arrEventDetail.add(new Event(Color.BLUE, 1518024949335L,  new EventDetail("", "Công ty Xanh dương", "184 Lê Đại Hành")));
-        arrEventDetail.add(new Event(Color.YELLOW, 1518024949335L,  new EventDetail("", "Công ty Vàng", "185 Lê Đại Hành")));
-
-        compactCalendarView.addEvents(arrEventDetail);
-        eventListRecyclerView = (RecyclerView) view.findViewById(R.id.eventList);
-        layoutManager = new LinearLayoutManager(getContext());
-        eventListRecyclerView.setLayoutManager(layoutManager);
-        adapter = new EventListAdapter(getContext(), arrEventDetail);
-        eventListRecyclerView.setAdapter(adapter);
 
         return view;
     }

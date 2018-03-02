@@ -12,12 +12,14 @@ public class JobQuickView {
     int salaryAmount;
     long deadline;
     boolean isSaved;
+    double latitude;
+    double longitude;
 
     public JobQuickView(){
 
     }
 
-    public JobQuickView(String companyLogoURL, String companyName, String jobPosition, String location, int salaryAmount, long deadline, boolean isSaved) {
+    public JobQuickView(String companyLogoURL, String companyName, String jobPosition, String location, int salaryAmount, long deadline, boolean isSaved, double latitude, double longitude) {
         this.companyLogoURL = companyLogoURL;
         this.companyName = companyName;
         this.jobPosition = jobPosition;
@@ -25,6 +27,8 @@ public class JobQuickView {
         this.salaryAmount = salaryAmount;
         this.deadline = deadline;
         this.isSaved = isSaved;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public String getCompanyLogoURL() {
@@ -81,5 +85,21 @@ public class JobQuickView {
 
     public void setSaved(boolean saved) {
         isSaved = saved;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }

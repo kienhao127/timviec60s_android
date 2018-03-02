@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Tìm Việc 60s</string>
+    <string name="title_activity_job_maps">Map</string>
 </resources>

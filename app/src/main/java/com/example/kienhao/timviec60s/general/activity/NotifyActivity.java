@@ -65,16 +65,22 @@ public class NotifyActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         if (menuItem.getItemId() == android.R.id.home) {
-            if (true){
-                Intent intent = new Intent(NotifyActivity.this, SeekerHomeActivity.class);
-                startActivity(intent);
-                finish();
-            } else {
-                Intent intent = new Intent(NotifyActivity.this, CompanyHomeActivity.class);
-                startActivity(intent);
-                finish();
-            }
+            onBackPressed();
         }
         return super.onOptionsItemSelected(menuItem);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        int count = getFragmentManager().getBackStackEntryCount();
+
+        if (count == 0) {
+            super.onBackPressed();
+            //additional code
+        } else {
+            getFragmentManager().popBackStack();
+        }
+
     }
 }

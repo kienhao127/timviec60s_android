@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    android:id="@+id/nestedScrollView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/salary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:drawableLeft="@drawable/target"
+            android:drawablePadding="5dp"
+            android:text="Mức lượng"
+            android:textColor="#000" />
+        <View
+            android:id="@+id/salaryLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/degree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:drawableLeft="@drawable/target"
+            android:drawablePadding="5dp"
+            android:text="Trình độ"
+            android:textColor="#000" />
+        <View
+            android:id="@+id/degreeLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:drawableLeft="@drawable/target"
+            android:drawablePadding="5dp"
+            android:text="Địa điểm"
+            android:textColor="#000" />
+        <View
+            android:id="@+id/locationLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:drawableLeft="@drawable/target"
+            android:drawablePadding="5dp"
+            android:text="Công việc"
+            android:textColor="#000" />
+        <View
+            android:id="@+id/taskLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/benefit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:text="PHÚC LỢI"
+            android:textColor="#000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/benefitDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:text="asdj laksjkdal sdja asdasda asdasd asda sdasda sda sda sda sda sda sda sda sda sdas dad as das dasdas das das das das das das das das asdasda asdasd asda sdasda sda sda sda sda sda sda sda sda sdas dad as das dasdas das das das das das das das das asdasda asdasd asda sdasda sda sda sda sda sda sda sda sda sdas dad as das dasdas das das das das das das das das asdasda asdasd asda sdasda sda sda sda sda sda sda sda sda sdas dad as das dasdas das das das das das das das das lsda ksldjalksdjakl sjdalk sjdalk sjdlkasjd lkasjd lkasj dlkasj dlkas jdlkasjd lkadjakldjaklsjd ajadklsjd akldaklsdj asldj askldj askldj asklda kldjask ldjj askldj akls djakl sdjask ldj "
+
+            android:textColor="#000" />
+        <View
+            android:id="@+id/benefitLine"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@android:color/darker_gray"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/jobDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:text="MÔ TẢ CÔNG VIỆC"
+            android:textColor="#000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/jobDesDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:text="asdasda asdasd asda sdasda sda sda sda sda sda sda sda sda sdas dad as das dasdas das das das das das das das das asdasda asdasd asda sdasda sda sda sda sda sda sda sda sda sdas dad as das dasdas das das das das das das das das asdasda asdasd asda sdasda sda sda sda sda sda sda sda sda sdas dad as das dasdas das das das das das das das das asdj lak sjkdalsdj alsda ksldjalksdjakl sjdalk sjdalk sjdlkasjd lkasjd lkasj dlkasj dlkas jdlkasjd lkadjakldjaklsjd ajadklsjd akldaklsdj asldj askldj askldj asklda kldjask ldjj askldj akls djakl sdjask ldj "
+            android:textColor="#000" />
+        <View
+            android:id="@+id/jobDesLine"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@android:color/darker_gray"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/requirements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:text="YÊU CẦU CHUYÊN MÔN"
+            android:textColor="#000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/requirementsDeatil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:text="asdasda asdasd asda sdasda sda sda sda sda sda sda sda sda sdas dad as das dasdas das das das das das das das das asdasda asdasd asda sdasda sda sda sda sda sda sda sda sda sdas dad as das dasdas das das das das das das das das asdasda asdasd asda sdasda sda sda sda sda sda sda sda sda sdas dad as das dasdas das das das das das das das das asdasda asdasd asda sdasda sda sda sda sda sda sda sda sda sdas dad as das dasdas das das das das das das das das asdasda asdasd asda sdasda sda sda sda sda sda sda sda sda sdas dad as das dasdas das das das das das das das dasasdasda asdasd asda sdasda sda sda sda sda sda sda sda sda sdas dad as das dasdas das das das das das das das das asdasda asdasd asda sdasda sda sda sda sda sda sda sda sda sdas dad as das dasdas das das das das das das das das"
+            android:textColor="#000" />
+        <View
+            android:id="@+id/requirementsLine"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@android:color/darker_gray"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

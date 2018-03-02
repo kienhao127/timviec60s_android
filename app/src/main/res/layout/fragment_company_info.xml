@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    android:id="@+id/nestedScrollView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#00c4ff"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/companyName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tên công ty"
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/companyAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Địa chỉ công ty"
+                android:layout_marginTop="10dp"
+                android:gravity="center"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/companyDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giới thiệu về công ty"
+            android:textSize="20dp"
+            android:textColor="#000"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
