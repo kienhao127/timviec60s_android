@@ -41,10 +41,10 @@ public class JobListFragment extends Fragment implements JobListAdapter.OnItemCl
         View view = inflater.inflate(R.layout.fragment_job_list, container, false);
 
         arrJobQuickView = new ArrayList<>();
-        arrJobQuickView.add(new JobQuickView("", "Công ty VNG", "Vị trị công việc 1", "Địa điểm 1", 1000, System.currentTimeMillis(), true, 10.7635963, 106.6555787));
-        arrJobQuickView.add(new JobQuickView("", "Lotte mart Phú Thọ", "Vị trị công việc 2", "Địa điểm 2", 2000, System.currentTimeMillis(), false, 10.7624213,106.6566533));
-        arrJobQuickView.add(new JobQuickView("", "Nhà sách Phương Nam", "Vị trị công việc 3", "Địa điểm 3", 3000, System.currentTimeMillis(), false, 10.7626708,106.6573942));
-        arrJobQuickView.add(new JobQuickView("", "Ngân hàng Đông Á", "Vị trị công việc 4", "Địa điểm 4", 4000, System.currentTimeMillis(), true, 10.7636823,106.6594847));
+        arrJobQuickView.add(new JobQuickView("", "Công ty VNG", "Vị trị công việc 1", "Địa điểm 1", 1000, System.currentTimeMillis(), true, 10.763938d, 106.6562652d));
+        arrJobQuickView.add(new JobQuickView("", "Lotte mart Phú Thọ", "Vị trị công việc 2", "Địa điểm 2", 2000, System.currentTimeMillis(), false, 10.7627871d,106.6572009d));
+        arrJobQuickView.add(new JobQuickView("", "Nhà sách Phương Nam", "Vị trị công việc 3", "Địa điểm 3", 3000, System.currentTimeMillis(), false, 10.763356d,106.658822d));
+        arrJobQuickView.add(new JobQuickView("", "Ngân hàng Đông Á", "Vị trị công việc 4", "Địa điểm 4", 4000, System.currentTimeMillis(), true, 10.7641458d,106.659743d));
 
         jobListRecyclerView = (RecyclerView) view.findViewById(R.id.jobList);
         layoutManager = new LinearLayoutManager(getContext());
